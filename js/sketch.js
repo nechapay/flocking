@@ -1,13 +1,16 @@
 const flock = []
 
+let alignSlider, cohesionSlider, separationSlider
+
 function setup() {
   createCanvas(854, 480)
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 200; i++) {
     flock.push(new Boid())
   }
-  setInterval(() => {
-    flock.push(new Boid())
-  }, 10000)
+
+  alignSlider = createSlider(0, 2, 1, 0.1)
+  cohesionSlider = createSlider(0, 2, 1, 0.1)
+  separationSlider = createSlider(0, 2, 1, 0.1)
 }
 
 function draw() {
